@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="oracleplugin.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="RCP Perspective"
+            class="oracleplugin.Perspective"
+            id="OraclePlugin.perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            class="oracleplugin.CustonmerViewPart"
+            icon="images/se_.gif"
+            id="oraclePlugin.PaneView"
+            name="paneView"
+            restorable="true">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            id="OraclePlugin.PaneAction"
+            label="Open Oracle Pane Action"
+            visible="true">
+         <action
+               class="oracleplugin.CustonmerAction"
+               icon="images/se_.gif"
+               id="oraclePlugin.PaneAction"
+               label="Oracle实时面板图"
+               menubarPath="oraclePlugin.openOracle"
+               style="push"
+               tooltip="Open Oracle Pane">
+         </action>
+         <menu
+               id="oraclePlugin.openOracle"
+               label="openOracle">
+         </menu>
+      </actionSet>
+   </extension>
+
+</plugin>
